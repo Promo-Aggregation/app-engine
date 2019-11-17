@@ -5,6 +5,7 @@
   "main": "dist/bin/http.js",
   "scripts": {
     "test": "NODE_ENV=test mocha -r ts-node/register src/tests/**/*.test.ts --exit",
+    "test-cloud": "mocha -r ts-node/register src/tests/**/*.test.ts --exit",
     "start": "node dist/bin/http.js",
     "compile": "rm -rf dist && tsc",
     "dev": "tsnd --respawn --no-notify --clear src/bin/http.ts"
