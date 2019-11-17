@@ -72,7 +72,7 @@ describe('Subscription Unsubscribe Test', function() {
       .request(app)
       .put('/subscription/unsubscribe')
       .send(['dana', 'asdkjfalksdjf'])
-      .set({ device_token: '98765' })
+      .set({ device_token: '12345' })
       .end((err, res) => {
         expect(err).to.be.null
         expect(res).to.have.status(401)

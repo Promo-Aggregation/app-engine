@@ -4,6 +4,14 @@ import morgan from 'morgan'
 import errorHandler from './middleware/errorHandler'
 import router from './routes'
 
+declare global {
+  namespace Express {
+    interface Request {
+      [key: string]: any
+    }
+  }
+}
+
 const app = express()
 
 app.use(cors())

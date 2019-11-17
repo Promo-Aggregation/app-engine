@@ -1,4 +1,4 @@
-import 'mocha'
+/* import 'mocha'
 import chai from 'chai'
 import chaiHttp from 'chai-http'
 import app from '../app'
@@ -39,3 +39,4 @@ describe('Success Register', function() {
       })
   })
 })
+ */
