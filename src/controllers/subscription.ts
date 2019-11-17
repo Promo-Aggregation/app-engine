@@ -6,12 +6,12 @@ class SubscriptionController {
   static async subscribe(req: Request, res: Response, next: NextFunction) {
     try {
       const { device_token } = req.headers
-      const { data: user } = await axios({
+      const response = await axios({
         url: server_user + '/subscribe',
         data: { tags: req.body.tags },
         headers: { device_token }
       })
-      res.status(200).json(user)
+      res.status(response.status).json(response.data)
     } catch (e) {
       next(e)
     }
@@ -20,12 +20,12 @@ class SubscriptionController {
   static async unsubscribe(req: Request, res: Response, next: NextFunction) {
     try {
       const { device_token } = req.headers
-      const { data: user } = await axios({
+      const response = await axios({
         url: server_user + '/unsubscribe',
         data: { tags: req.body.tags },
         headers: { device_token }
       })
-      res.status(200).json(user)
+      res.status(response.status).json(response.data)
     } catch (e) {
       next(e)
     }

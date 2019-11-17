@@ -6,12 +6,12 @@ class UserController {
   static async register(req: Request, res: Response, next: NextFunction) {
     try {
       const { device_token } = req.body
-      const { data: user } = await axios({
+      const response = await axios({
         method: 'POST',
         data: { device_token },
         url: server_user + '/register'
       })
-      res.status(200).json(user)
+      res.status(response.status).json(response.data)
     } catch (e) {
       next(e)
     }
@@ -20,12 +20,12 @@ class UserController {
   static async login(req: Request, res: Response, next: NextFunction) {
     try {
       const { device_token } = req.body
-      const { data: user } = await axios({
+      const response = await axios({
         method: 'POST',
         data: { device_token },
         url: server_user + '/login'
       })
-      res.status(200).json(user)
+      res.status(response.status).json(response.data)
     } catch (e) {
       next(e)
     }
