@@ -7,14 +7,14 @@
     "test": "NODE_ENV=test mocha -r ts-node/register src/tests/**/*.test.ts --exit",
     "start": "node dist/bin/http.js",
     "compile": "rm -rf dist && tsc",
-    "dev": "nodemon"
+    "dev": "tsnd --respawn --no-notify --clear src/bin/http.ts"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Promo-Aggregation/app-engine.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Tigor Lazuardi, Kevin Anantha, Audrick",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Promo-Aggregation/app-engine/issues"
@@ -29,8 +29,7 @@
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
     "mocha": "^6.2.2",
-    "nodemon": "^1.19.4",
-    "ts-node": "^8.5.2",
+    "ts-node-dev": "^1.0.0-pre.44",
     "typescript": "^3.7.2"
   },
   "dependencies": {

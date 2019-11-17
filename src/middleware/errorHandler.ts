@@ -1,4 +1,6 @@
-const errorHandler = (err: any, req: any, res: any, next: Function) => {
+import { Request, Response, NextFunction } from 'express'
+
+const errorHandler = (err: any, req: Request, res: Response, next: NextFunction) => {
   if (err.isAxiosError) {
     res.status(err.response.status).send(err.response.data)
   } else {
