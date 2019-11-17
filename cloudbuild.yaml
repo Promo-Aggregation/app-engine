@@ -1,8 +1,8 @@
 steps:
   - name: "gcr.io/cloud-builders/npm"
     args: ["install"]
+  - name: "gcr.io/cloud-builders/npm"
+    args: ["run", "compile"]
   - name: "gcr.io/cloud-builders/gcloud"
     args: ["app", "deploy"]
-    env:
-      - "MONGO_DB=${_MONGO_DB}"
 # timeout: "0s"
